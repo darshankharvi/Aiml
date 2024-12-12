@@ -1,72 +1,42 @@
-import numpy as np
-
-A = np.array([[1, 2, 3], [4, 5, 6]])
-B= np.array([[7, 8], [9, 10], [11, 12]])
-
-
-result = np.dot(A,B)
-
-
-print("Matrix 1:")
-print(A)
-print("\nMatrix 2:")
-print(B)
-print("\nResult of matrix multiplication:")
-print(result)
-
-
-
-
-
-
-
-from datetime import datetime
-
-class DateTimeReader:
-    def init(self):
-        # Initialize the class, no parameters needed for this example
-        pass
-
-    def get_current_date(self):
-        # Method to get the current date
-        return datetime.now().date()
-
-    def get_current_time(self):
-        # Method to get the current time
-        return datetime.now().time()
-
-    def get_full_datetime(self):
-        # Method to get the full current date and time
-        return datetime.now()
-
-# Create an object of the DateTimeReader class
-datetime_reader = DateTimeReader()
-
-# Call the methods and display the current date, time, and full datetime
-print("Current Date:", datetime_reader.get_current_date())
-print("Current Time:", datetime_reader.get_current_time())
-print("Current Date and Time:", datetime_reader.get_full_datetime())
-
-
-
-
-
-
-def find_duplicates(input_list):
-    duplicates = []
-    seen = set()  # Using a set to keep track of unique elements
-
-    for item in input_list:
-        if item in seen and item not in duplicates:
-            duplicates.append(item)  # Append only if it's a duplicate and not already added
-        else:
-            seen.add(item)
-
-    return duplicates
-
-# Example usage
-input_list = [1, 2, 3, 4, 5, 1, 2, 6, 7]
-duplicates = find_duplicates(input_list)
-
-print("Input List:", input_list)
-print("Duplicate Elements:", duplicates)
+import random
+def display(room):
+print(room)
+room = [
+[1, 1, 1, 1],
+[1, 1, 1, 1],
+[1, 1, 1, 1],
+[1, 1, 1, 1],
+]
+print("All the rooom are dirty")
+display(room)
+x =0
+y= 0
+All the rooom are dirty
+[[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]]
+while x < 4:
+while y < 4:
+room[x][y] = random.choice([0,1])
+y+=1
+x+=1
+y=0
+print("Before cleaning the room I detect all of these random dirts")
+display(room)
+x =0
+y= 0
+z=0
+Before cleaning the room I detect all of these random dirts
+[[0, 1, 0, 1], [0, 1, 0, 1], [0, 0, 1, 1], [0, 1, 1, 0]]
+while x < 4:
+while y < 4:
+if room[x][y] == 1:
+print("Vaccum in this location now,",x, y)
+room[x][y] = 0
+print("cleaned", x, y)
+z+=1
+y+=1
+x+=1
+y=0
+pro= (100-((z/16)*100))
+print("Room is clean now, Thanks for using")
+display(room)
+print('performance=',pro,'%')
